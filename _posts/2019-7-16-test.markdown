@@ -17,11 +17,11 @@ permalink: /archivers/test
 后来仔细一想，报的错误是` ERROR '/_images/avatar.jpg' not found.`是图片没找到，可是图片确实是按照这个路径写在html里的。
 
 ...
-那问题是出在`sidebar.html`这里了？接着找到`_site/index.html`,把`_images`文件夹放到`_site`下，这个时候刷新页面，图片就加载出来了。原来路径是相对于`_site/index.html`的。
+那问题是出在填写图片路径的`sidebar.html`这里了？接着找到`_site/index.html`,把`_images`文件夹放到`_site`下，这个时候刷新页面，图片就加载出来了。原来路径是相对于`_site/index.html`的。
 
 不过，我重启`jekyll server`后，发现图片又不能显示了，一看刚刚放到`_site`下的`_images`文件夹不见了。网上一搜，原来`jekyll`要把资源解析放到`_site`下，因此重启server时`_site`会被重写。
 
-那我之前放在根目录下的`_images`为什么没有解析到`_site`下呢？可能是带下划线的文件名称有所规定。
+那我之前放在根目录下的`_images`为什么没有解析到`_site`下呢？可能是对带下划线的文件名称有所限制。
 
 把`_images`改为`images`后，问题得到解决。
 

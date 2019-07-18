@@ -1,16 +1,16 @@
 # Site settings
 title: Blog
-url: "http://yantanglife.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
+url: https://yantanglife.github.io    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
 baseurl: "" # "/jekyll-theme-EasyBook" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-  One or more sentences introducing this blog. 我
+  One or more sentences introducing this blog.
 
 # Your information
 email: your_email@example.com
 author: yantang
-avatar: avatar.jpg #"//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
-profile: One sentence introducing yourself. 我是
+avatar: avatar.png #"//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
+profile: 我是
 #twitter_username: twitter_username
 #github_username:  github_username
 profile_links:

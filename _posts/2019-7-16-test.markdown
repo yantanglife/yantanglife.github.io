@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "My Test"
+date:   2019-7-17 22:00:13
+categories: jekyll
+permalink: /archivers/test
+---
+
+在开始的时候，我想添加头像，因此做了以下两个操作：
+ 
+* 添加`_images`文件夹(与`_posts`同级)，里面存放图片`avatar.jpg`；
+* 在`sidebar.html`中写`img class="avatar" src="{ { site.url }}/_images/{ { site.avatar }}"`.
+ 
+但是在本地执行完`jekyll server`，图片一直都不能显示。完全不知道问题在哪里，在网上也找不到正确的解决方法(~~可能是我对问题的描述有误？~~)。
+<!--more-->
+
+后来仔细一想，报的错误是` ERROR '/_images/avatar.jpg' not found.`是图片没找到，可是图片确实是按照这个路径写在html里的。
+
+...
+那问题是出在`sidebar.html`这里了？接着找到`_site/index.html`,把`_images`文件夹放到`_site`下，这个时候刷新页面，图片就加载出来了。原来路径是相对于`_site/index.html`的。
+
+不过，我重启`jekyll server`后，发现图片又不能显示了，一看刚刚放到`_site`下的`_images`文件夹不见了。网上一搜，原来`jekyll`要把资源解析放到`_site`下，因此重启server时`_site`会被重写。
+
+那我之前放在根目录下的`_images`为什么没有解析到`_site`下呢？可能是带下划线的文件名称有所规定。
+
+把`_images`改为`images`后，问题得到解决。
+
+**所以最开始我为什么要用`_images`?**:-)
+
+* * *
+<br>
+参考[**官网**](https://jekyllrb.com/docs/)中的`Configuration`,`Posts`,`Assets`,`Statics Files`页面.
+
+## Add a picture
+
+![pic]({{ "/images/k_new.png" | absolute_url }})

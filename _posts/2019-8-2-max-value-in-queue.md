@@ -37,42 +37,42 @@ permalink: /archivers/MaxValueInQueue
 * 元素2出栈，`dataStack`栈顶元素2出栈，而`maxStack`栈顶元素为5，大于2，因此`maxStack`无变化.
 * 元素5出栈，`dataStack`栈顶元素5出栈，而`maxStack`栈顶元素为5，两者相等，因此`maxStack`栈顶元素出栈.
 
-代码实现如下：
+代码实现如下（*C++*）：
 ```cpp
 #include <stack>
 using namespace std;
 
 class MyStack {
-private :
-	stack<int> dataStack, maxStack;
+private:
+    stack<int> dataStack, maxStack;
 
-public :
-	void push(int value) {
-		dataStack.push(value);
-		if (maxStack.size() == 0 || maxStack.top() <= value)
-			maxStack.push(value);
-	}
+public:
+    void push(int value) {
+        dataStack.push(value);
+        if (maxStack.size() == 0 || maxStack.top() <= value)
+            maxStack.push(value);
+    }
 
-	int top() {
-		return dataStack.top();
-	}
-
-	void pop() {
-		int topData = this->top();
-		dataStack.pop();
-		if (topData == maxStack.top())
-			maxStack.pop();
-	}
-
-	int max() {
-		if (!maxStack.empty())
-			return maxStack.top();
-		return -1;
-	}
-
-	int size() {
-		return dataStack.size();
-	}
+    int top() {
+        return dataStack.top();
+    }
+    
+    void pop() {
+        int topData = this->top();
+        dataStack.pop();
+        if (topData == maxStack.top())
+            maxStack.pop();
+    }
+    
+    int max() {
+        if (!maxStack.empty())
+            return maxStack.top();
+        return -1;
+    }
+    
+    int size() {
+        return dataStack.size();
+    }
 };
 ```
 ### **队列**
@@ -97,34 +97,34 @@ public :
 ```cpp
 class MyQueue {
 private:
-	MyStack stackIn, stackOut;
+    MyStack stackIn, stackOut;
 
 public:
-	void EnQueue(int value){
-		stackIn.push(value);
-	}
+    void EnQueue(int value){
+        stackIn.push(value);
+    }
+    
+    int DeQueue() {
+        int topData;
+        if (stackOut.size() > 0) {
+            topData = stackOut.top();
+            stackOut.pop();
+        }
+        else {
+            while (stackIn.size() > 0) {
+                stackOut.push(stackIn.top());
+                stackIn.pop();
+            }
+            topData = stackOut.top();
+            stackOut.pop();
+        }
+        return topData;
+    }
 
-	int DeQueue() {
-		int topData;
-		if (stackOut.size() > 0) {
-			topData = stackOut.top();
-			stackOut.pop();
-		}
-		else {
-			while (stackIn.size() > 0) {
-				stackOut.push(stackIn.top());
-				stackIn.pop();
-			}
-			topData = stackOut.top();
-			stackOut.pop();
-		}
-		return topData;
-	}
-
-	int max() {
-		return stackIn.max() > stackOut.max() ?
-			stackIn.max() : stackOut.max();
-	}
+    int max() {
+        return stackIn.max() > stackOut.max() ?
+        	stackIn.max() : stackOut.max();
+    }
 };
 ```
 * * *

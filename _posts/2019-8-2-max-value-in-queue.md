@@ -4,6 +4,7 @@ title:  "Max Value in Queue"
 date:   2019-8-1 21:00:00
 categories: Algorithm
 permalink: /archivers/MaxValueInQueue
+comments: true
 ---
 ## **问题**
 假设有这样一个拥有3个操作的队列：

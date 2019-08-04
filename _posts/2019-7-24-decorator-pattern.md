@@ -4,7 +4,7 @@ title:  "Decorator Pattern"
 date:   2019-7-23 15:00:00
 categories: Design-Pattern
 permalink: /archivers/decorator-pattern
-comments: false
+nocomments: true
 ---
 装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在.
 

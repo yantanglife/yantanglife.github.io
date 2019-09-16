@@ -3,7 +3,8 @@ layout: post
 title:  "My Test"
 date:   2019-7-17 22:00:13
 categories: jekyll
-permalink: /archivers/test
+permalink: /archivers/myTest
+comments: true
 ---
 
 在开始的时候，我想添加头像，因此做了以下两个操作：

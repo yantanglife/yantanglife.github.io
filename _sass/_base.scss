@@ -6,11 +6,13 @@ body {
 }
 a {
 	text-decoration: none;
-	color: #036;
+	//Change #036 to SteelBlue.
+	color: #4682B4;
 }
 a:hover, a:focus {
 	text-decoration:underline;
-	color: #069;
+	//Change #069 to OrangeRed.
+	color: #FF4500;
 }
 blockquote {
 	background: #FFF;
@@ -30,7 +32,9 @@ code {
 }
 pre {
 	overflow-x: auto;
-	padding: 20px 50px;
+	//padding: 20px 50px;
+	//up distance, left distance.
+	padding: 8px 40px;
 }
 pre, pre code {
 	color: #fafafa;

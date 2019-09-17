@@ -153,4 +153,4 @@ c1 = new ConcreteDecorator (c)；
 第二类是因为类已定义为不能被继承.
 
 * * *
-内容来自【作者：刘伟 [http://blog.csdn.net/lovelion]([http://blog.csdn.net/lovelion)】
+内容来自【作者：刘伟 [http://blog.csdn.net/lovelion](http://blog.csdn.net/lovelion)】

@@ -12,7 +12,15 @@
     </a>
     <!--Add end.-->
     <br>
-&copy; {{ site.time | date: '%Y' }} | {{ site.author }}
+© {{ site.time | date: '%Y' }} | ⚡ {{ site.author }} |
+    <!--Add VISITS nums for total or single page. 2019.09.17-->
+    {% if page.url == site.header.links.Category or page.url == "/" %}
+    <span id="busuanzi_container_site_uv" style="display: none">👣 <span id="busuanzi_value_site_uv"></span></span>
+    {% else %}
+    <span id="busuanzi_container_page_pv" style="display: none">👀 <span id="busuanzi_value_page_pv"></span></span>
+    {% endif %}
+    🚶
+    <!--Add end.-->
 
 </div>
 </footer>
@@ -37,6 +45,9 @@ $('#WeChatFunc').on('click', function(){
   		});
 </script>
 <!--Add end.-->
+
+<!--Reference: http://ibruce.info/2015/04/04/busuanzi/#more | 2019.09.17-->
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
 <script src="{{ '/js/easybook.js' | prepend: site.baseurl }}"></script>

@@ -99,3 +99,47 @@
     }
 }
 }
+
+/* Add for back-top button. | 2019.10.09 */
+/* Actually, I wanted to apply BACKTOP look like what http://jalan.space/about/ shows,
+   but I did't carry it off. So I put an easy version. */
+/* back to top button */
+
+#back-top a { 
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    // 小按钮到浏览器底边的距离
+    bottom: 10px; 
+    // 小按钮到浏览器右边框的距离
+    right: 10px;
+    // 小按钮中文字的颜色
+    color: rgb(64,120,192);
+    z-index: 1000;
+    // 小按钮底色
+    background: #fff;
+    // 小按钮中文字到按钮边缘的距离
+    padding: auto;
+    // 小按钮圆角的弯曲程度（半径）
+    border-radius: 30px; 
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    // 小按钮中文字的粗细
+    font-weight: bold; 
+    text-decoration: none !important;
+    box-shadow:0 1px 2px rgba(0,0,0,.15), 0 1px 0 #ffffff inset;
+}
+
+ /* 小按钮上有鼠标悬停时 */
+
+#back-top a:hover {
+    // 小按钮的底色
+    background: rgba(64,120,192,0.8); 
+    // 文字颜色
+    color: #fff; 
+}
+
+/* Add end. | 2019.10.09 */
